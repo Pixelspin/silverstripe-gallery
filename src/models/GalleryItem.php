@@ -34,21 +34,24 @@ class GalleryItem extends DataObject
 
     private static $default_sort = 'Sort';
 
-    public function fieldLabels($includerelations = true)
-    {
-        $labels = parent::fieldLabels($includerelations);
-
-        return $labels;
-    }
-
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+
+        $types = $this->dbObject('Type')->getEnum();
+        foreach($types as $key => $value){
+            $types[$key] = _t(__CLASS__.'.TYPE_' . $value, $value);
+        }
+        $fields->dataFieldByName('Type')->setSource($types);
 
         $fields->removeByName('PageID');
         $fields->removeByName('VideoEmbedURL');
         $fields->removeByName('VideoImageURL');
         $fields->removeByName('Sort');
+
+        $fields->dataFieldByName('Title')->setDescription(_t(__CLASS__.'.TITLE_DESCRIPTION', 'The title of this item.'));
+        $fields->dataFieldByName('Type')->setDescription(_t(__CLASS__.'.TYPE_DESCRIPTION', 'Item type, this can be a image or a video.'));
+        $fields->dataFieldByName('VideoURL')->setDescription(_t(__CLASS__.'.VIDEO_URL_DESCRIPTION', 'Video URL, this can be a youtube or a vimeo URL.'));
 
         return $fields;
     }

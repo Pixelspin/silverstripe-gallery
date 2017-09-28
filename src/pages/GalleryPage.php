@@ -25,16 +25,10 @@ class GalleryPage extends Page
 
         $itemsConfig = GridFieldConfig_RecordEditor::create();
         $itemsConfig->addComponent(new GridFieldOrderableRows());
-        $fields->addFieldToTab('Root.GalleryItems', new GridField('Items', 'Items', $this->Items(), $itemsConfig));
+        $fields->findOrMakeTab('Root.Items')->setTitle(_t(__CLASS__.'.has_many_Items', 'Items'));
+        $fields->addFieldToTab('Root.Items', new GridField('Items', _t(__CLASS__.'.has_many_Items', 'Items'), $this->Items(), $itemsConfig));
 
         return $fields;
     }
 
 }
-
-
-//Alles door de translate
-
-//Module van maken
-//Display logic toevoegen (ook in composer)
-//Gridfield dingen toevoegen in composer

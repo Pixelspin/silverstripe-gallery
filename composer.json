@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "silverstripe/cms": "^4@dev"
+        "silverstripe/cms": "^4@dev",
+        "symbiote/silverstripe-gridfieldextensions": "3.0.2"
     },
     "extra": {
         "installer-name": "gallery"
