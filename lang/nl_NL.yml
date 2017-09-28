@@ -1,0 +1,5 @@
+nl_NL:
+  Pixelspin\Gallery\GalleryPage:
+    SINGULARNAME: 'Gallerij pagina'
+    PLURALNAME: 'Gallerij paginas'
+    DESCRIPTION: 'Pagina om fotos en videos te tonen'

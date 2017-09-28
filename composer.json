@@ -1,0 +1,26 @@
+{
+    "name": "pixelspin/silverstripe-gallery",
+    "description": "Gallery component for SilverStripe CMS",
+    "type": "silverstripe-module",
+    "homepage": "http://pixel-spin.com",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "silverstripe",
+        "pixelspin",
+        "gallery"
+    ],
+    "authors": [
+        {
+            "name": "Pixelspin",
+            "homepage": "http://pixel-spin.com"
+        }
+    ],
+    "require": {
+        "silverstripe/cms": "^4@dev"
+    },
+    "extra": {
+        "installer-name": "gallery"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
